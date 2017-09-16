@@ -1,0 +1,14 @@
+# Basics --------------------------------------
+
+colorscheme base16
+
+set global tabstop 4
+
+# Mappings ------------------------------------
+
+map global normal '#' :comment-line<ret>                   # Comment lines with '#'
+
+hook global InsertChar j %{ try %{                         # vim pinkie prevention: 
+  exec -draft hH <a-k>jj<ret> d                            # 'jj' behaves like escape
+  exec <esc>
+}}
