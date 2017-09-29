@@ -4,11 +4,16 @@ colorscheme base16
 
 set global tabstop 4
 
+hook global WinCreate .* %{ 
+	addhl number_lines -hlcursor                           # Show line numbers
+	addhl -group / wrap -word -width 130                   # Soft wrap at max 130 characters, breaking on word boundaries
+} 
+
 # Mappings ------------------------------------
 
 map global normal '#' :comment-line<ret>                   # Comment lines with '#'
 
 hook global InsertChar j %{ try %{                         # vim pinkie prevention: 
-  exec -draft hH <a-k>jj<ret> d                            # 'jj' behaves like escape
-  exec <esc>
+	exec -draft hH <a-k>jj<ret> d                            # 'jj' behaves like escape
+	exec <esc>
 }}
