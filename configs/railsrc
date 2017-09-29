@@ -1,0 +1,3 @@
+# ~/.railsrc
+-T            # Skip installing minitest by default, since I use rspec
+-d postgresql # Use postgres by default instead of sqlite
