@@ -3,8 +3,7 @@
 ok check "fdesetup status | grep $Q -E 'FileVault is (On|Off, but will be enabled after the next restart).'"
 if check_failed && satisfying; then
 	echo "Enabling Filevault on Next Boot"
-	sudo fdesetup enable -user $USER \ 
-		| tee $HOME/Desktop/"Filevault Recovery Key.txt"
+	sudo fdesetup enable -user $USER | tee $HOME/Desktop/"Filevault Recovery Key.txt"
 fi
 
 if [ -n "$COMPUTER_NAME" ]; then 
