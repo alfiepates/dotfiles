@@ -20,9 +20,10 @@ if check_failed && satisfying; then
 	ssh-keygen -t rsa
 fi
 
-echo "Setting resolution of internal display to smallest HiDPI available, if possible"
-ok cask switchresx
-osascript << 'EOF'
+if satisfying
+	echo "Setting resolution of internal display to smallest HiDPI available, if possible"
+	ok cask switchresx
+	osascript << 'EOF'
 tell application "SwitchResX Daemon"
 	set builtinDisplay to first item of (displays)
 	set highestRetinaMode to last item of (modes of builtinDisplay whose definition is 2.0)
@@ -31,3 +32,4 @@ tell application "SwitchResX Daemon"
 	end if
 end tell
 EOF
+end if
