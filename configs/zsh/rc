@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+# Cache Brew prefix and repo because they take forever (thanks alyssa)
+BREW_PREFIX="$(brew --prefix)"
+BREW_REPO="$(brew --repo)"
+
+autoload -Uz colors && colors
+
+# Liquid Prompt
+source "$BREW_PREFIX/opt/liquidprompt/share/liquidprompt"
