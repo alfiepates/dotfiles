@@ -6,5 +6,9 @@ BREW_REPO="$(brew --repo)"
 
 autoload -Uz colors && colors
 
+source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$BREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
 # Liquid Prompt
 source "$BREW_PREFIX/opt/liquidprompt/share/liquidprompt"
